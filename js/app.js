@@ -102,26 +102,15 @@
     const ids = new Set([
       'cl_mineduc_bc_1_6','grade_cl_3b','subj_cn','axis_cn_life','theme_bees','oa_cn03_03',
       'concept_cn_pollination','concept_cn_flowering_lifecycle','concept_cn_plant_reproduction',
-      'oah_cn03_a','oah_cn03_b','oah_cn03_c','oah_cn03_d','oah_cn03_e','oah_cn03_f',
-      'skill_cn_observe','skill_cn_question','skill_cn_investigate','skill_cn_use_models','skill_cn_analyze','skill_cn_communicate',
+      'oah_cn03_a','oah_cn03_f',
+      'skill_cn_observe','skill_cn_question','skill_cn_analyze','skill_cn_communicate',
       'domain_science','domain_engineering','domain_math','domain_computing','domain_arts_design',
-      'prac_sci_observation','prac_sci_questioning','prac_sci_investigation','prac_sci_data','prac_sci_modeling','prac_sci_explanation','prac_sci_argument',
-      'prac_eng_define','prac_eng_criteria','prac_eng_ideate','prac_eng_modelproto','prac_eng_test','prac_eng_iterate',
-      'prac_math_model','prac_math_precision','prac_math_argument',
-      'prac_cs_define_problem','prac_cs_create','prac_cs_test_refine',
-      'prac_art_generate','prac_art_refine','prac_art_convey','prac_art_evaluate',
-      'devband_middle_primary','move_initial_model','move_stw','move_guided_investigation','move_poe','move_csq','move_model_revision','move_design_challenge','move_prototype_test_iterate','move_peer_critique','move_exit_check',
-      'evid_initial_model','evid_stw','evid_guided_investigation','evid_model_revision','evid_design_challenge','evid_prototype_test_iterate',
-      'udl_prior','udl_multimedia','udl_response','udl_grad_support','udl_feedback','udl_choice'
+      'prac_sci_observation','prac_sci_questioning','prac_sci_investigation','prac_sci_modeling','prac_sci_explanation','prac_sci_communication',
+      'prac_eng_define','prac_eng_test','prac_math_precision','prac_cs_define_problem','prac_art_convey',
+      'devband_middle_primary','move_initial_model','move_stw','move_guided_investigation','move_poe','move_model_revision','move_design_challenge',
+      'evid_initial_model','evid_stw','evid_guided_investigation','evid_model_revision',
+      'udl_prior','udl_multimedia','udl_response','udl_feedback'
     ]);
-    // Include any direct bridge nodes that connect the curated path.
-    relationships.forEach(r=>{
-      if(ids.has(r.source_entity_id) && ids.has(r.target_entity_id)) return;
-      if(['maps_to_steam_practice','supports_curriculum_skill','supports_steam_practice','targets_concept','has_practice'].includes(r.relationship_type)){
-        if(ids.has(r.source_entity_id) && entityMap.has(r.target_entity_id) && entityMap.get(r.target_entity_id).normalized_type!=='practice_progression_level') ids.add(r.target_entity_id);
-        if(ids.has(r.target_entity_id) && entityMap.has(r.source_entity_id) && entityMap.get(r.source_entity_id).normalized_type!=='practice_progression_level') ids.add(r.source_entity_id);
-      }
-    });
     return ids;
   }
 
