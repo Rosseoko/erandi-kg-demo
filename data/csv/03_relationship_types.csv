@@ -1,0 +1,31 @@
+﻿relationship_type,directional,meaning
+affords_steam_practice,true,OAH crea oportunidad curricular para práctica STEAM.
+applies_to_grade,true,Elemento aplica a curso.
+builds_towards,true,Progresión experta/no necesariamente oficial hacia aprendizaje posterior.
+can_afford_practice,true,OA puede permitir práctica STEAM; no implica requerimiento.
+can_apply_udl_consideration,true,Movimiento puede aplicar consideración DUA.
+creates_opportunity_for,true,Práctica/movimiento crea oportunidad para competencia; no garantiza desarrollo.
+elicits_evidence_of,true,Intención puede producir evidencia provisional de práctica.
+has_attitude,true,Asignatura contiene objetivo de actitud.
+has_axis,true,Asignatura contiene eje.
+has_developmental_adaptation,true,Movimiento tiene adaptación para banda de desarrollo.
+has_evidence_intent,true,Movimiento tiene intención de evidencia.
+has_learning_objective,true,Eje contiene OA.
+has_orientation,true,Asignatura se interpreta/organiza con esta perspectiva.
+has_practice,true,Dominio contiene práctica.
+has_progression_level,true,Práctica tiene nivel de progresión.
+has_skill_architecture,true,Asignatura contiene arquitectura de habilidades.
+has_skill_objective,true,Etapa contiene OAH.
+has_stage,true,Arquitectura contiene etapa.
+has_subject,true,Marco incluye asignatura.
+has_support_artifact,true,Movimiento puede operacionalizarse con este artefacto.
+includes_construct,true,Concepto se descompone en constructo semántico.
+includes_grade,true,Marco incluye curso.
+instantiates,true,Tema ejemplifica un constructo.
+maps_to_steam_practice,true,Habilidad curricular se mapea semánticamente a práctica STEAM.
+next_level,true,Orden propuesto de sofisticación creciente.
+relates_to,true,Relación semántica no jerárquica.
+supports_curriculum_skill,true,Movimiento puede apoyar/elicitar un OAH.
+supports_steam_practice,true,Movimiento puede apoyar una práctica STEAM.
+targets_concept,true,OA apunta a concepto normalizado.
+uses_atomic_skill,true,OAH se descompone en habilidad atómica.

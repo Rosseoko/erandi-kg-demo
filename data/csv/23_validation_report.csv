@@ -1,0 +1,10 @@
+﻿check,status,details
+relation_endpoints_exist,PASS,831 relaciones; 0 endpoints faltantes.
+entity_primary_sources_exist,PASS,392 entidades; 0 source_id faltantes.
+relationship_primary_sources_exist,PASS,831 relaciones; 0 source_id faltantes.
+layer1_scope,PASS,67 nodos L1; foco CN 3B / Ciencias de la Vida / OA03 + contexto de progresión 1B–6B.
+layer2_completeness,PASS,"5 dominios, 52 prácticas, 176 niveles de progresión y 5 competencias."
+layer3_sampling,PASS,"15 movimientos, 45 adaptaciones DUA, 15 intenciones de evidencia, 43 artefactos."
+official_vs_expert_provenance,PASS,Toda entidad/relación incluye provenance_class y verification_status; progresiones expertas tienen official_relation=false.
+project_zero_license_flag,PASS,Rutinas derivadas de Project Zero marcadas para revisión; páginas registran CC BY-NC-ND 4.0.
+bees_end_to_end,PASS,8 sesiones + 7 ramas adaptativas de ejemplo; ambas con source_ids.

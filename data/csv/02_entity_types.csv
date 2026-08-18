@@ -1,0 +1,23 @@
+﻿normalized_type,layer,meaning
+curriculum_framework,L1,Marco curricular oficial.
+grade_level,L1,Curso/nivel.
+subject,L1,Asignatura.
+subject_orientation,L1,Perspectiva o énfasis disciplinar; puede provenir de fuente oficial o interpretación experta.
+curriculum_axis,L1,Eje curricular.
+learning_objective,L1,Objetivo de Aprendizaje oficial (OA).
+skill_architecture,L1,Arquitectura general de habilidades/investigación.
+skill_stage,L1,Etapa de la investigación científica.
+skill_objective,L1,Objetivo de Aprendizaje de Habilidad oficial (OAH).
+atomic_skill,L1,Habilidad normalizada para conectar OAH con prácticas.
+attitude_objective,L1,Objetivo de Aprendizaje de Actitud oficial (OAA).
+canonical_concept,L1,Concepto semántico extraído/curado; conservar procedencia.
+theme_phenomenon,L1,Fenómeno/tema de entrada Erandi; no normativa curricular.
+steam_domain,L2,Dominio STEAM.
+disciplinary_practice,L2,Práctica disciplinar dentro de un dominio.
+practice_progression_level,L2,Nivel de sofisticación de una práctica; síntesis Erandi salvo indicación.
+cross_cutting_competency,L2,Competencia transversal que una práctica puede ejercitar.
+developmental_band,L3,Referencia de diseño por etapa/curso; no etiqueta de capacidad.
+udl_consideration,L3,Consideración DUA/UDL aplicable al diseño.
+pedagogical_move,L3,Movimiento/rutina/estrategia pedagógica composable.
+evidence_intent,L3,Qué evidencia busca producir/observar un movimiento y qué inferencias son válidas.
+support_artifact_template,L3,Plantilla de material operacional que implementa un movimiento.

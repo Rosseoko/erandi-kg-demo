@@ -1,0 +1,7 @@
+﻿scope_id,concept_entity_id,grade_code,subject_code,axis_code,emphasis,provenance_class,verification_status,source_id
+scope_plant_structures_1b,concept_cn_plant_structures,1B,CN,CN-LIFE,"Estructuras básicas de plantas como raíces, tallos y hojas.",expert_interpretation,expert_curated,src_daniela_map
+scope_lifecycles_2b,concept_cn_life_cycles,2B,CN,CN-LIFE,Ciclos de vida de seres vivos como antecedente general.,expert_interpretation,expert_curated,src_daniela_map
+scope_flowering_3b,concept_cn_flowering_lifecycle,3B,CN,CN-LIFE,"Ciclo de vida de plantas con flor: germinación, crecimiento, reproducción, flor/fruto, polinización y dispersión.",official_plus_expert_decomposition,expert_curated,src_cn03_oa_03
+scope_pollination_3b,concept_cn_pollination,3B,CN,CN-LIFE,Polinización explícitamente reconocida como importante en CN03 OA03.,official_curriculum,verified,src_cn03_oa_03
+scope_ecosystems_4b,concept_cn_ecosystems,4B,CN,CN-LIFE,Ecosistemas e interacciones como ampliación del razonamiento sobre relaciones entre organismos.,expert_interpretation,expert_curated,src_daniela_map
+scope_photosynthesis_6b,concept_cn_photosynthesis,6B,CN,CN-LIFE,Fotosíntesis y redes alimentarias como profundización posterior del papel de las plantas y transferencia de materia/energía.,expert_interpretation,expert_curated,src_daniela_map

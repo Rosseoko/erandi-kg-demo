@@ -1,0 +1,26 @@
+﻿file,purpose
+00_manifest.csv,Índice del paquete y alcance.
+01_sources.csv,"Todas las fuentes con procedencia, URL y nota de licencia."
+02_entity_types.csv,Inventario de tipos de nodo de las tres capas.
+03_relationship_types.csv,Predicados/relaciones permitidas y significado.
+04_layer1_curriculum_entities.csv,"Capa 1: Ciencias Naturales 3° Básico, Ciencias de la Vida, OA03/polinización + contexto de progresión."
+05_layer1_curriculum_relationships.csv,"Relaciones de estructura oficial, descomposición semántica y progresiones expertas marcadas."
+06_layer1_concept_scopes.csv,Énfasis de conceptos por curso para visualizar progresión alrededor de 3° Básico.
+07_layer1_concept_progressions.csv,"Progresiones conceptuales expertas visibles, explícitamente no oficiales."
+08_layer2_steam_entities.csv,"Capa 2 completa: 5 dominios STEAM, 52 prácticas, competencias y niveles de progresión."
+09_layer2_steam_relationships.csv,Relaciones dentro del marco STEAM.
+10_layer2_practice_progressions.csv,176 niveles de progresión propuestos para las 52 prácticas; todos marcados como síntesis Erandi.
+11_cross_layer_curriculum_steam.csv,Puentes Habilidad/OAH/OA chileno ↔ prácticas STEAM.
+12_layer3_pedagogical_moves.csv,"15 movimientos pedagógicos con uso, límites, fuentes y licencia."
+13_layer3_move_mappings.csv,Movimientos ↔ OAH ↔ prácticas STEAM ↔ competencias.
+14_layer3_developmental_adaptations.csv,Adaptación de cada movimiento para 3° Básico / primaria media.
+15_layer3_udl_adaptations.csv,45 aplicaciones DUA concretas sobre los movimientos.
+16_layer3_evidence_intents.csv,Intenciones de evidencia con evaluación restringida y regla de decisión.
+17_layer3_artifact_templates.csv,43 tipos de soportes/materiales asociados a los movimientos.
+18_bees_activity_samples.csv,Instanciación breve de cada movimiento al tema Abejas y polinización.
+19_bees_end_to_end_journey.csv,Trayectoria de 8 sesiones mostrando el camino completo desde el grafo.
+20_bees_adaptive_branches.csv,Ejemplos de bifurcaciones basadas en evidencia y límites de inferencia.
+21_all_entities.csv,Todos los nodos del KG en una tabla unificada.
+22_all_relationships.csv,"Todas las relaciones, incluidas las conexiones entre capas."
+23_validation_report.csv,QA estructural y conteos del paquete.
+README.md,Guía de importación/uso en Postgres y criterios de procedencia.

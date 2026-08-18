@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erandi — Revisión experta del sistema de conocimiento</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">E</div>
+      <div>
+        <h1>Erandi · Revisión experta</h1>
+        <p>3° Básico · Ciencias Naturales · Abejas y polinización</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="ghost-btn" id="openReviewHelp">Cómo revisar</button>
+      <span class="read-only">Solo lectura</span>
+    </div>
+  </header>
+
+  <nav class="main-tabs" aria-label="Vistas principales">
+    <button class="tab active" data-view="graph">Grafo</button>
+    <button class="tab" data-view="steam">Marco STEAM</button>
+    <button class="tab" data-view="pedagogy">Inteligencia pedagógica</button>
+    <button class="tab" data-view="journey">Trayectoria PBL</button>
+    <button class="tab" data-view="sources">Fuentes</button>
+  </nav>
+
+  <main>
+    <section id="view-graph" class="view active graph-view">
+      <div class="graph-toolbar compact-panel">
+        <div class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="nodeSearch" type="search" placeholder="Buscar OA, habilidad, práctica, movimiento…" autocomplete="off" />
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+        <label class="toolbar-label">Vista
+          <select id="presetSelect">
+            <option value="bees">Ruta Abejas · resumen</option>
+            <option value="bees_full">Ruta Abejas · completa</option>
+            <option value="curriculum">Currículum</option>
+            <option value="steam">STEAM</option>
+            <option value="pedagogy">Pedagogía</option>
+            <option value="all">Todo</option>
+          </select>
+        </label>
+        <label class="toolbar-label">Dominio
+          <select id="domainSelect">
+            <option value="all">Todos</option>
+            <option value="SCI">Ciencia</option>
+            <option value="ENG">Ingeniería</option>
+            <option value="MAT">Matemática</option>
+            <option value="TEC">Tecnología</option>
+            <option value="ART">Artes/Diseño</option>
+          </select>
+        </label>
+        <label class="toolbar-label">Procedencia
+          <select id="provenanceSelect">
+            <option value="all">Todas</option>
+            <option value="official_curriculum">Oficial Mineduc</option>
+            <option value="external_framework">Marco externo</option>
+            <option value="expert_synthesis">Síntesis experta</option>
+            <option value="expert_interpretation">Interpretación experta</option>
+            <option value="prototype">Prototipo Erandi</option>
+          </select>
+        </label>
+        <div class="zoom-controls" aria-label="Controles de zoom">
+          <button id="zoomOut" title="Alejar">−</button>
+          <button id="zoomIn" title="Acercar">＋</button>
+          <button id="fitGraph" title="Ajustar grafo">Ajustar</button>
+          <button id="resetGraph" title="Restablecer filtros">Restablecer</button>
+        </div>
+      </div>
+
+      <div id="selectedRibbon" class="selected-ribbon compact-panel">
+        <div class="selected-main">
+          <div class="selected-type" id="selectedType">NODO SELECCIONADO</div>
+          <div class="selected-name" id="selectedName">Selecciona un nodo para revisar su definición y relaciones.</div>
+        </div>
+        <div class="selected-summary" id="selectedSummary">Las etiquetas de relación aparecen al seleccionar un nodo. Doble clic para enfocar su vecindario.</div>
+        <div class="selected-meta" id="selectedMeta"></div>
+        <div class="selected-actions">
+          <button id="focusSelected" class="ghost-btn" disabled>Enfocar</button>
+          <button id="copySelectedId" class="ghost-btn" disabled>Copiar ID</button>
+          <button id="openSelectedDetails" class="primary-btn" disabled>Detalles</button>
+        </div>
+      </div>
+
+      <div class="graph-stage" id="graphStage">
+        <svg id="knowledgeGraph" role="img" aria-label="Grafo de conocimiento de Erandi"></svg>
+        <div class="layer-headings" aria-hidden="true">
+          <span class="l1">1 · Currículum</span>
+          <span class="l2">2 · Marco STEAM</span>
+          <span class="l3">3 · Inteligencia pedagógica</span>
+        </div>
+        <div class="graph-hint">Arrastra para mover · rueda/pinch para zoom · clic para revisar · doble clic para enfocar</div>
+        <button class="floating-legend-toggle" id="toggleLegend">Leyenda</button>
+        <div class="legend-card hidden" id="legendCard"></div>
+      </div>
+      <div class="graph-status" id="graphStatus"></div>
+    </section>
+
+    <section id="view-steam" class="view content-view">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Capa 2</div>
+          <h2>Marco STEAM de Erandi</h2>
+          <p>Prácticas disciplinares reutilizables y sus progresiones. Las progresiones expertas se muestran explícitamente como síntesis, no como currículum oficial.</p>
+        </div>
+        <div class="filters-inline" id="steamFilters"></div>
+      </div>
+      <div id="steamDomainGrid" class="domain-grid"></div>
+    </section>
+
+    <section id="view-pedagogy" class="view content-view">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Capa 3</div>
+          <h2>Inteligencia pedagógica</h2>
+          <p>Movimientos que conectan habilidades curriculares, prácticas STEAM, desarrollo, DUA, evidencia y materiales.</p>
+        </div>
+        <label class="toolbar-label">Tipo
+          <select id="moveTypeFilter"><option value="all">Todos</option></select>
+        </label>
+      </div>
+      <div id="moveGrid" class="move-grid"></div>
+    </section>
+
+    <section id="view-journey" class="view content-view journey-view">
+      <div id="journeyHeader"></div>
+      <div id="pblElements"></div>
+      <div id="journeyPhases"></div>
+    </section>
+
+    <section id="view-sources" class="view content-view">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Trazabilidad</div>
+          <h2>Fuentes y procedencia</h2>
+          <p>Las relaciones y progresiones distinguen explícitamente conocimiento oficial, marcos externos y síntesis experta.</p>
+        </div>
+      </div>
+      <div id="sourceLegend" class="source-legend"></div>
+      <div id="sourceTable" class="source-table"></div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-card">
+      <button class="modal-close" data-close-modal aria-label="Cerrar">×</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+  <div class="modal hidden" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+    <div class="modal-backdrop" data-close-help></div>
+    <article class="modal-card small-modal">
+      <button class="modal-close" data-close-help aria-label="Cerrar">×</button>
+      <div class="eyebrow">Guía de revisión</div>
+      <h2 id="helpTitle">Cómo revisar este prototipo</h2>
+      <p>Este demo es de solo lectura. Al encontrar algo que deba corregirse, copia el <strong>ID</strong> del nodo o relación y anota qué cambiarías.</p>
+      <div class="review-prompts">
+        <div><strong>Currículum</strong><span>¿La interpretación conserva el sentido de las Bases? ¿Faltan habilidades, conceptos o relaciones?</span></div>
+        <div><strong>Progresiones</strong><span>¿La secuencia de sofisticación tiene sentido? Recuerda que las progresiones expertas no se presentan como oficiales.</span></div>
+        <div><strong>Pedagogía</strong><span>¿El movimiento realmente responde a la habilidad/práctica indicada? ¿Cuándo no debería usarse?</span></div>
+        <div><strong>3° Básico + DUA</strong><span>¿La adaptación es apropiada para la edad y ofrece acceso sin reducir el desafío intelectual?</span></div>
+        <div><strong>Trayectoria</strong><span>¿Cada fase PBL tiene propósito curricular claro? ¿La evidencia y los materiales corresponden a lo que se quiere observar?</span></div>
+      </div>
+    </article>
+  </div>
+
+  <script src="data/entities.js"></script>
+  <script src="data/relationships.js"></script>
+  <script src="data/sources.js"></script>
+  <script src="data/moves.js"></script>
+  <script src="data/move_mappings.js"></script>
+  <script src="data/development.js"></script>
+  <script src="data/udl.js"></script>
+  <script src="data/evidence.js"></script>
+  <script src="data/artifacts.js"></script>
+  <script src="data/activities.js"></script>
+  <script src="data/journey_raw.js"></script>
+  <script src="data/branches.js"></script>
+  <script src="data/pbl_project.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
